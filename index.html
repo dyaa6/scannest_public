@@ -1,324 +1,44 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Dyaa Abdul Majeed | من نحن - ضياء عبد مجيد</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Base Styles */
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.8;
-            margin: 0;
-            padding: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Language Switcher */
-        .lang-switcher {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .lang-btn {
-            background-color: transparent;
-            border: 2px solid #3498db;
-            color: #3498db;
-            padding: 8px 25px;
-            margin: 0 10px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-family: 'Tajawal', sans-serif;
-            font-size: 1.1em;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .lang-btn.active, .lang-btn:hover {
-            background-color: #3498db;
-            color: #ffffff;
-        }
-
-        /* About Section */
-        .about-section {
-            background-color: #ffffff;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .about-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .about-title h2 {
-            color: #2c3e50;
-            font-size: 2.2em;
-            margin: 0;
-            display: inline-block;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-        }
-
-        .about-content p {
-            font-size: 1.1em;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .about-content strong {
-            color: #2c3e50;
-            font-weight: 700;
-        }
-
-        .about-content h3 {
-            color: #2980b9;
-            font-size: 1.5em;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Dynamic Direction Styles (LTR vs RTL) */
-        [dir="ltr"] .about-content h3::before { content: "▪"; color: #e74c3c; font-size: 1.2em; margin-right: 10px; }
-        [dir="rtl"] .about-content h3::before { content: "▪"; color: #e74c3c; font-size: 1.2em; margin-left: 10px; }
-        [dir="ltr"] .about-content { text-align: left; }
-        [dir="rtl"] .about-content { text-align: right; }
-
-        /* Apps List */
-        .apps-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .apps-list li {
-            background-color: #f1f8ff;
-            margin-bottom: 15px;
-            padding: 15px 20px;
-            border-radius: 5px;
-            font-size: 1.05em;
-            transition: transform 0.2s ease;
-        }
-
-        [dir="ltr"] .apps-list li { border-left: 4px solid #3498db; }
-        [dir="rtl"] .apps-list li { border-right: 4px solid #3498db; }
-
-        [dir="ltr"] .apps-list li:hover { transform: translateX(5px); }
-        [dir="rtl"] .apps-list li:hover { transform: translateX(-5px); }
-
-        .apps-list li a {
-            display: inline-block;
-            margin-top: 8px;
-            color: #e74c3c;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.95em;
-        }
-
-        .apps-list li a:hover {
-            text-decoration: underline;
-        }
-
-        /* Contact Info */
-        .contact-info {
-            background-color: #f1f8ff;
-            border: 2px dashed #3498db;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .contact-info h3 {
-            color: #2c3e50;
-            justify-content: center;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-
-        .contact-info h3::before {
-            display: none;
-        }
-
-        .contact-info .contact-item {
-            margin: 10px 20px;
-            display: inline-block;
-            font-size: 1.1em;
-            color: #333;
-        }
-        
-        .contact-info .contact-value {
-            direction: ltr;
-            display: inline-block;
-            color: #e74c3c;
-            font-weight: bold;
-        }
-
-        /* Language Visibility */
-        .lang-ar { display: none; }
-        .lang-en { display: block; }
-
-        @media (max-width: 768px) {
-            .about-section { padding: 30px 20px; }
-            .about-title h2 { font-size: 1.8em; }
-            .contact-info .contact-item { display: block; margin: 10px 0; }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scan Nest Reader</title>
+    <!--هذه الصفحة لا تضهر على المسار الرئيسي-->
+<style>
+:root { --bg: #ffffff; --fg: #1d2430; --muted: #6b7380; --accent: #2f7de1; --card: #eaf3fd; }
+@media (prefers-color-scheme: dark) { :root { --bg: #11161d; --fg: #e4e8ee; --muted: #8e98a6; --accent: #6ab0ff; --card: #1c232c; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", Tahoma, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+h1 { font-size: 1.8rem; line-height: 1.25; margin: 8px 0 4px; }
+h2 { font-size: 1.15rem; margin: 28px 0 6px; }
+p.meta { color: var(--muted); margin-top: 0; }
+a { color: var(--accent); overflow-wrap: anywhere; }
+ul { padding-inline-start: 22px; }
+header { display: flex; gap: 8px; justify-content: flex-end; }
+header button { border: 1px solid var(--muted); background: transparent; color: var(--fg); border-radius: 18px; padding: 6px 14px; font: inherit; cursor: pointer; }
+header button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.card { background: var(--card); border-radius: 18px; padding: 20px; margin: 20px 0; }
+footer { color: var(--muted); font-size: .9rem; margin-top: 40px; }
+</style>
 </head>
 <body>
+<main>
+<h1>Scan Nest Reader</h1>
+<p class="meta">Scan documents, read PDFs and edit Word files: free, offline and private.</p>
+<div class="card">
+<p>Scan Nest Reader turns your phone into a document scanner, a PDF reader and a Word editor. Everything runs on your device: no account needed, and your documents never leave your device. Free, supported by ads.</p>
+<ul>
+<li>Scan documents and ID cards with automatic edge detection and filters</li>
+<li>Read, annotate, sign and fill PDF files; record lectures alongside them</li>
+<li>Open and edit Word (.docx and .doc) files with familiar Home, Insert, Layout and View tools</li>
+<li>Recognize text in Arabic and many other languages, scan QR codes, translate on the device</li>
+</ul>
+</div>
+<p><a href="privacy-policy.html">Privacy policy</a> · <a href="privacy-policy.html#ar">سياسة الخصوصية</a></p>
+<p>Contact: <a href="mailto:dyaa6a@gmail.com">dyaa6a@gmail.com</a></p>
+</main>
 
-    <div class="container">
-        <!-- أزرار التبديل بين اللغات -->
-        <div class="lang-switcher">
-            <button id="btn-en" class="lang-btn active" onclick="setLanguage('en')">English</button>
-            <button id="btn-ar" class="lang-btn" onclick="setLanguage('ar')">العربية</button>
-        </div>
-
-        <section class="about-section">
-            
-            <!-- القسم الإنجليزي (الافتراضي) -->
-            <div id="content-en" class="lang-en about-content">
-                <div class="about-title">
-                    <h2>Welcome to My Personal Website</h2>
-                </div>
-                
-                <p>I am <strong>Dyaa Abdul Majeed</strong>, a software developer, Internet of Things (IoT) engineer, and Printed Circuit Board (PCB) designer. I have about six years of experience in delivering comprehensive technical solutions that integrate advanced software systems with precision hardware devices.</p>
-
-                <h3>Academic Background</h3>
-                <p>I graduated from the Computer Engineering Department at the University of Mosul (Class of 2026). My academic journey is built on a solid foundation, having previously graduated ranked first in my department at the Technical Institute of Mosul, Northern Technical University, in 2021.</p>
-
-                <h3>Software and Systems Development</h3>
-                <p>I specialize in building cross-platform applications (Windows and Android) using the Flutter framework, alongside technologies such as JavaScript, HTML, CSS, and C++. One of my notable achievements is designing and deploying a comprehensive student management and attendance system, which was officially adopted as the primary operating system across all colleges of the Northern Technical University in four Iraqi governorates. I am constantly expanding my expertise in modern development technologies and integrating them with cloud services to ensure high reliability and performance.</p>
-
-                <h3>My Apps on Google Play Store</h3>
-                <p>As an Android developer, I have designed and published 4 applications on the Google Play Store, tailored to efficiently meet user needs, including:</p>
-                <ul class="apps-list">
-                    <li>
-                        <strong>Scan Nest Reader:</strong> An advanced application for scanning, reading, and managing documents.
-                        <br><a href="https://play.google.com/store/apps/details?id=com.deyaa.scanNest" target="_blank">🔗 View on Google Play</a>
-                    </li>
-                    <li>
-                        <strong>MP3 Converter:</strong> A practical and fast tool for converting and extracting audio from multimedia files.
-                        <br><a href="https://play.google.com/store/apps/details?id=com.deyaa.mp3converter" target="_blank">🔗 View on Google Play</a>
-                    </li>
-                    <li>
-                        <strong>Buildova:</strong> An innovative platform designed to provide effective services and tools that meet user needs.
-                        <br><a href="https://play.google.com/store/apps/details?id=com.dheyaa.buildova" target="_blank">🔗 View on Google Play</a>
-                    </li>
-                    <li>
-                        <strong>Iraq Prayer Times:</strong> An accurate application for prayer times and religious events, specifically designed for users in Iraq.
-                        <br><a href="https://play.google.com/store/apps/details?id=com.pray.times.iraq.deyaa" target="_blank">🔗 View on Google Play</a>
-                    </li>
-                </ul>
-
-                <h3>Hardware Engineering and IoT</h3>
-                <p>My passion extends beyond writing code to designing the physical hardware itself. I design and manufacture custom Printed Circuit Boards (PCBs) for industrial monitoring and smart home automation. I possess deep expertise in programming embedded systems and microcontrollers (such as ESP32 and STM32) using C/C++ and connecting them to cloud-based IoT platforms. I have delivered several successful projects to the market, including Smart Home automation devices and remote car starters, among other innovative technical solutions.</p>
-
-                <h3>My Vision</h3>
-                <p>I continually strive to transform complex ideas into practical, applicable solutions, accurately meeting client requirements—whether through seamless software interfaces or highly efficient embedded devices.</p>
-                
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <strong>Email:</strong> <span class="contact-value">dyaa6a@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Phone Number:</strong> <span class="contact-value">+964 771 712 4094</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- القسم العربي -->
-            <div id="content-ar" class="lang-ar about-content">
-                <div class="about-title">
-                    <h2>مرحباً بك في موقعي الشخصي</h2>
-                </div>
-                
-                <p>أنا <strong>ضياء عبد مجيد</strong>، مطور برمجيات ومهندس إنترنت الأشياء (IoT) ومصمم لوحات الدوائر المطبوعة (PCB). أمتلك خبرة تمتد لحوالي ست سنوات في تقديم حلول تقنية وإنتاجية متكاملة تجمع بين الأنظمة البرمجية المتقدمة والأجهزة المادية الدقيقة.</p>
-
-                <h3>خلفيتي الأكاديمية</h3>
-                <p>تخرجت من قسم هندسة الحاسوب بجامعة الموصل (دفعة 2026). رحلتي الأكاديمية مبنية على أساس متين، حيث تخرجت سابقاً بالمركز الأول على قسمي في المعهد التقني بالموصل التابع للجامعة التقنية الشمالية في عام 2021.</p>
-
-                <h3>تطوير البرمجيات والأنظمة</h3>
-                <p>أنا متخصص في بناء تطبيقات تعمل على منصات متعددة (Windows و Android) باستخدام إطار عمل Flutter، إلى جانب تقنيات مثل JavaScript و HTML و CSS و C++. من أبرز إنجازاتي تصميم ونشر نظام متكامل لإدارة الطلاب وتسجيل الحضور، والذي تم اعتماده رسمياً كنظام التشغيل الأساسي في جميع كليات الجامعة التقنية الشمالية عبر أربع محافظات عراقية. أهتم دائماً بتوسيع مداركي في تقنيات التطوير الحديثة وربطها بالخدمات السحابية لضمان تقديم أداء عالٍ وموثوق.</p>
-
-                <h3>تطبيقاتي على متجر Google Play</h3>
-                <p>بصفتي مطور تطبيقات Android، قمت بتصميم ونشر 4 تطبيقات على متجر Google Play، والتي تم تطويرها لتلبية متطلبات المستخدمين بكفاءة عالية، ومنها:</p>
-                <ul class="apps-list">
-                    <li>
-                        <strong>تطبيق Scan Nest Reader:</strong> تطبيق متقدم لمسح وقراءة وإدارة المستندات.
-                        <br><a href="https://play.google.com/store/apps/details?id=com.deyaa.scanNest" target="_blank">🔗 عرض التطبيق على Google Play</a>
-                    </li>
-                    <li>
-                        <strong>تطبيق MP3 Converter:</strong> أداة عملية وسريعة لتحويل واستخراج الصوتيات من ملفات الوسائط المتعددة.
-                        <br><a href="https://play.google.com/store/apps/details?id=com.deyaa.mp3converter" target="_blank">🔗 عرض التطبيق على Google Play</a>
-                    </li>
-                    <li>
-                        <strong>تطبيق Buildova:</strong> منصة مبتكرة مصممة لتقديم خدمات وأدوات فعالة تلبي احتياجات المستخدمين.
-                        <br><a href="https://play.google.com/store/apps/details?id=com.dheyaa.buildova" target="_blank">🔗 عرض التطبيق على Google Play</a>
-                    </li>
-                    <li>
-                        <strong>تطبيق أوقات الصلاة في العراق:</strong> تطبيق دقيق لمعرفة مواقيت الصلاة والمناسبات الدينية، مصمم خصيصاً للمستخدمين في العراق.
-                        <br><a href="https://play.google.com/store/apps/details?id=com.pray.times.iraq.deyaa" target="_blank">🔗 عرض التطبيق على Google Play</a>
-                    </li>
-                </ul>
-
-                <h3>هندسة الأجهزة (Hardware) وإنترنت الأشياء</h3>
-                <p>شغفي يتجاوز كتابة الأكواد ليصل إلى تصميم الأجهزة المادية بحد ذاتها. أقوم بتصميم وتصنيع لوحات الدوائر المطبوعة (PCBs) المخصصة للمراقبة الصناعية وأتمتة المنازل الذكية. أمتلك خبرة عميقة في برمجة الأنظمة المدمجة والمتحكمات الدقيقة (مثل عائلة ESP32 و STM32) باستخدام لغتي C/C++ وربطها بمنصات إنترنت الأشياء السحابية. لدي العديد من المشاريع التي أثبتت نجاحها الفعلي في السوق، مثل أجهزة المنازل الذكية (Smart Home) وأجهزة تشغيل السيارات عن بُعد وغيرها من الحلول التقنية المبتكرة.</p>
-
-                <h3>رؤيتي</h3>
-                <p>أسعى دائماً لتحويل الأفكار المعقدة إلى حلول عملية قابلة للتطبيق، وتلبية متطلبات العملاء بدقة سواء كان ذلك من خلال واجهات برمجية سلسة أو أجهزة مدمجة عالية الكفاءة.</p>
-                
-                <div class="contact-info">
-                    <h3>معلومات الاتصال</h3>
-                    <div class="contact-item">
-                        <strong>البريد الإلكتروني:</strong> <span class="contact-value">dyaa6a@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <strong>رقم الهاتف:</strong> <span class="contact-value">+964 771 712 4094</span>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-    </div>
-
-    <!-- كود JavaScript للتبديل بين اللغتين -->
-    <script>
-        function setLanguage(lang) {
-            if (lang === 'ar') {
-                document.documentElement.lang = 'ar';
-                document.documentElement.dir = 'rtl';
-                
-                document.getElementById('content-en').style.display = 'none';
-                document.getElementById('content-ar').style.display = 'block';
-                
-                document.getElementById('btn-en').classList.remove('active');
-                document.getElementById('btn-ar').classList.add('active');
-            } else {
-                document.documentElement.lang = 'en';
-                document.documentElement.dir = 'ltr';
-                
-                document.getElementById('content-ar').style.display = 'none';
-                document.getElementById('content-en').style.display = 'block';
-                
-                document.getElementById('btn-ar').classList.remove('active');
-                document.getElementById('btn-en').classList.add('active');
-            }
-        }
-    </script>
 </body>
 </html>
